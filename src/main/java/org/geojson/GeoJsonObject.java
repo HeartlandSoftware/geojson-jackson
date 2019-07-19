@@ -1,5 +1,6 @@
 package org.geojson;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -15,6 +16,7 @@ import java.util.Arrays;
 		@Type(Point.class), @Type(MultiPoint.class), @Type(MultiLineString.class), @Type(LineString.class),
                 @Type(GeometryCollection.class) })
 @JsonInclude(Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class GeoJsonObject implements Serializable {
 
 	private Crs crs;

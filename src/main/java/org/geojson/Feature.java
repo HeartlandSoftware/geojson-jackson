@@ -1,10 +1,12 @@
 package org.geojson;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Feature extends GeoJsonObject {
 
 	@JsonInclude(JsonInclude.Include.ALWAYS)

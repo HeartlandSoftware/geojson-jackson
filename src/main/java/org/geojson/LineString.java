@@ -1,5 +1,8 @@
 package org.geojson;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class LineString extends MultiPoint {
 
 	public LineString() {

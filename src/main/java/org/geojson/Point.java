@@ -1,5 +1,8 @@
 package org.geojson;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Point extends GeoJsonObject {
 
 	private LngLatAlt coordinates;

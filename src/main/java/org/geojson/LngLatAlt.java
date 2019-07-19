@@ -1,5 +1,6 @@
 package org.geojson;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.geojson.jackson.LngLatAltDeserializer;
@@ -10,6 +11,7 @@ import java.util.Arrays;
 
 @JsonDeserialize(using = LngLatAltDeserializer.class)
 @JsonSerialize(using = LngLatAltSerializer.class)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class LngLatAlt implements Serializable{
 
 	private double longitude;

@@ -2,6 +2,9 @@ package org.geojson;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class MultiPolygon extends Geometry<List<List<LngLatAlt>>> {
 
 	public MultiPolygon() {

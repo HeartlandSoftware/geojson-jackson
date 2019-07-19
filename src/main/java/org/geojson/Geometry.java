@@ -3,6 +3,9 @@ package org.geojson;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class Geometry<T> extends GeoJsonObject {
 
 	protected List<T> coordinates = new ArrayList<T>();

@@ -5,6 +5,9 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class FeatureCollection extends GeoJsonObject implements Iterable<Feature> {
 
 	private List<Feature> features = new ArrayList<Feature>();
