@@ -9,7 +9,7 @@
 
 	<groupId>de.grundid.opendatalab</groupId>
 	<artifactId>geojson-jackson</artifactId>
-	<version>1.9-SNAPSHOT</version>
+	<version>1.9.0-HSS</version>
 	<packaging>jar</packaging>
 
 
