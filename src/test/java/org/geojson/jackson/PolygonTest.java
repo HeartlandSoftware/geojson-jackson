@@ -45,6 +45,15 @@ public class PolygonTest {
 		assertListEquals(MockData.INTERNAL, polygon.getInteriorRing(0));
 		assertListEquals(MockData.INTERNAL, polygon.getInteriorRings().get(0));
 	}
+	
+	@Test
+	public void malformedTest() throws Exception {
+	    Polygon polygon = mapper.readValue("{\"type\": \"Polygon\",\"coordinates\":" +
+	            "\"MULTIPOLYGON(((-97.2359378539002 49.8565162489406,-97.2044866378176 49.9391234958738," +
+	            "-97.0761807168735 49.9187449099505,-97.1079012403885 49.8361938952035,-97.2359378539002 49.8565162489406)))" +
+	            "\"}", Polygon.class);
+	    assertEquals(MockData.MALFORMED_POLYGON, polygon.getCoordinateString());
+	}
 
 	private void assertListEquals(List<LngLatAlt> expectedList, List<LngLatAlt> actualList) {
 		for (int x = 0; x < actualList.size(); x++) {
